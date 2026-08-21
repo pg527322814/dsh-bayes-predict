@@ -1,5 +1,8 @@
 # dsh-bayes-predict
 
+[![CI](https://github.com/pg527322814/dsh-bayes-predict/actions/workflows/ci.yml/badge.svg)](https://github.com/pg527322814/dsh-bayes-predict/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
 基于 **贝叶斯定理** 的 DeepSeek Harness 个股预测插件（dual-face：Host 工具 + 浏览器面板）。
 
 > ⚠️ **平台依赖**：本插件是 DeepSeek Harness（dsh）平台的扩展插件，依赖其宿主环境（`dsh web`、cordis 插件系统、`window.__ModuleLoader__` 等）。该平台目前未随本仓库公开，**单独克隆本仓库无法直接运行**，代码仅供学习、参考与移植。
@@ -81,6 +84,16 @@ lib/
 > ⚠️ 数据口径：评分与单股分析均使用**后复权（hfq）**——收益序列含分红再投资，除权日无假跳空，信号干净；但价格非真实股价。若需真实股价口径请改用不复权。
 
 > ⚠️ **腾讯 hfq 复权断层防护**：腾讯后复权的复权基准随最新交易日滚动，接口返回的最后一天可能发生"跨基准断裂"（假跳变）。`fetchKlines` 已内置断层检测：hfq 最后一天 |单日涨跌| > 8% 时拉不复权序列核对，判定复权断层则丢弃最后一天（宁缺毋滥）。
+
+## 开发
+
+零第三方依赖，Node 18+。
+
+```sh
+npm test
+```
+
+运行 `test/smoke.mjs`（贝叶斯核心 + 合成 K 线端到端）与 `test/normalize.test.mjs`（代码归一化单测）。
 
 ## 卸载
 
