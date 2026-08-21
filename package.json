@@ -4,6 +4,12 @@
   "description": "贝叶斯个股预测插件：多指标信号融合的上涨概率估计、趋势状态识别与持仓风险度量（A 股 + 美股）",
   "type": "module",
   "main": "lib/index.js",
+  "scripts": {
+    "test": "node test/smoke.mjs && node test/normalize.test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "exports": {
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
