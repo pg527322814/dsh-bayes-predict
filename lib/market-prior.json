@@ -1,0 +1,103 @@
+{
+  "builtAt": "2026-08-20T05:16:59.632Z",
+  "horizon": 5,
+  "universe": 10,
+  "stocks": [
+    "600519",
+    "000001",
+    "300750",
+    "601318",
+    "000858",
+    "002594",
+    "600036",
+    "688981",
+    "AAPL",
+    "MSFT"
+  ],
+  "signals": {
+    "macd_hist": {
+      "lrBull": 1.1661,
+      "lrBear": 0.8619,
+      "hit": 1210,
+      "nUp": 568,
+      "nDown": 642
+    },
+    "rsi": {
+      "lrBull": 1.0005,
+      "lrBear": 0.9995,
+      "hit": 2049,
+      "nUp": 982,
+      "nDown": 1068
+    },
+    "ma_align": {
+      "lrBull": 0.9616,
+      "lrBear": 1.0387,
+      "hit": 1389,
+      "nUp": 666,
+      "nDown": 724
+    },
+    "price_ma20": {
+      "lrBull": 1.0592,
+      "lrBear": 0.931,
+      "hit": 1288,
+      "nUp": 598,
+      "nDown": 690
+    },
+    "bollinger": {
+      "lrBull": 1.013,
+      "lrBear": 0.9884,
+      "hit": 2230,
+      "nUp": 1069,
+      "nDown": 1160
+    },
+    "momentum": {
+      "lrBull": 1.0292,
+      "lrBear": 0.9732,
+      "hit": 1420,
+      "nUp": 687,
+      "nDown": 733
+    },
+    "macd_cross": {
+      "lrBull": 1.1809,
+      "lrBear": 0.8431,
+      "hit": 475,
+      "nUp": 193,
+      "nDown": 282
+    },
+    "trend_recent": {
+      "lrBull": 1.1094,
+      "lrBear": 0.9046,
+      "hit": 1385,
+      "nUp": 667,
+      "nDown": 718
+    },
+    "wicks": {
+      "lrBull": 1.0238,
+      "lrBear": 0.9837,
+      "hit": 332,
+      "nUp": 160,
+      "nDown": 173
+    },
+    "gap": {
+      "lrBull": 1.0656,
+      "lrBear": 0.9401,
+      "hit": 393,
+      "nUp": 207,
+      "nDown": 186
+    },
+    "volume": {
+      "lrBull": 1.0154,
+      "lrBear": 0.9903,
+      "hit": 198,
+      "nUp": 102,
+      "nDown": 96
+    },
+    "atr": {
+      "lrBull": 1.0188,
+      "lrBear": 0.9768,
+      "hit": 450,
+      "nUp": 232,
+      "nDown": 218
+    }
+  }
+}

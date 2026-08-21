@@ -1,0 +1,8 @@
+# dsh-bayes-predict bundle patch.
+# A bundle patch is applied as its own layer over the profile root; the row
+# id is addressed for later overrides (last write per row wins). Installing
+# the package via `dsh plugin --profile web add dsh-bayes-predict`
+# auto-activates this layer — no manual cordis.patch.yml edit needed.
+- insert:
+    - id: bayes-predict
+      name: 'dsh-bayes-predict'

@@ -1,0 +1,50 @@
+{
+  "name": "dsh-bayes-predict",
+  "version": "1.0.0",
+  "description": "贝叶斯个股预测插件：多指标信号融合的上涨概率估计、趋势状态识别与持仓风险度量（A 股 + 美股）",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "slots"
+      ],
+      "immediately": true
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "stock",
+    "bayes",
+    "prediction",
+    "finance",
+    "a-share",
+    "quant"
+  ],
+  "author": "pg",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pg527322814/dsh-bayes-predict.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pg527322814/dsh-bayes-predict/issues"
+  },
+  "homepage": "https://github.com/pg527322814/dsh-bayes-predict#readme",
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "LICENSE",
+    "README.md"
+  ]
+}
