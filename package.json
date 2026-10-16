@@ -1,7 +1,7 @@
 {
   "name": "dsh-bayes-predict",
-  "version": "1.0.0",
-  "description": "贝叶斯个股预测插件：多指标信号融合的上涨概率估计、趋势状态识别与持仓风险度量（A 股 + 美股）",
+  "version": "1.1.0",
+  "description": "贝叶斯个股预测插件：卡尔曼增益融合的上涨概率估计、策略回测与全市场选股、自选股实时跟踪（A 股 + 美股）",
   "type": "module",
   "main": "lib/index.js",
   "scripts": {
@@ -32,7 +32,10 @@
     "dsh-plugin",
     "stock",
     "bayes",
+    "kalman",
     "prediction",
+    "backtest",
+    "watchlist",
     "finance",
     "a-share",
     "quant"
