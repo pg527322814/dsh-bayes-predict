@@ -5,7 +5,7 @@
   "type": "module",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node test/kalman.test.mjs && node test/smoke.mjs && node test/pinyin.test.mjs && node test/screen.test.mjs && node test/watchlist.test.mjs && node test/realtime.test.mjs && node test/normalize.test.mjs"
+    "test": "node test/kalman.test.mjs && node test/smoke.mjs && node test/pinyin.test.mjs && node test/screen.test.mjs && node test/watchlist.test.mjs && node test/realtime.test.mjs && node test/routes.test.mjs && node test/normalize.test.mjs"
   },
   "engines": {
     "node": ">=18"

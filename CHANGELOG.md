@@ -55,6 +55,20 @@
   （锚点取不复权收盘、最新价取实时报价）；只有真的拿到报价才标记 `live=true`，否则回退缓存价而不谎称实时
 - 新增 `test/watchlist.test.mjs`（78 项）、`test/realtime.test.mjs`（36 项）
 
+### Host 层：回测 / 筛选 / 自选路由与报告增强
+
+- 新增 7 条同源路由：`/bayes-predict/backtest`（含「低分 Top」对照曲线、多窗口缓存预热）、
+  `/bayes-predict/screen`（单日截面选股）、`/bayes-predict/refresh`（手动刷新缓存）、
+  `/bayes-predict/pools`（资源池与标签）、`/bayes-predict/watchlist`（自选报告，`codesOnly=1` 轻量取代码），
+  以及 `/bayes-predict/watchlist/add|remove|clear`（一律 POST，避免预取/缓存把 GET 当副作用请求）
+- `bayes_stock_predict` 工具新增 `backtest` 参数；报告新增「模型历史校准」段（walk-forward 方向准确率、
+  Brier 与无信息基线对比、卡尔曼/T=1/手调 T=3/只用先验四条口径对照）与卡尔曼趋势滤波诊断行
+- 报告措辞澄清：区分「证据原始 log-odds 和」与「实际作用于先验的增量」，
+  避免把收缩前的变化量误读为实得变化
+- 保留正式版既有行为：方向标签按**实际贡献**符号显示、MACD 柱按贡献显示多头/空头扩张、先验主导提示；
+  工具名保持 `bayes_stock_predict`，全部路由统一前缀 `/bayes-predict/`
+- 新增 `test/routes.test.mjs`：用假 ctx 收集注册结果，锁定「1 个 Host 工具 + 9 条路由」的命名契约
+
 ## 1.0.0 (2026-08-22)
 
 - 贝叶斯核心：双向经验似然比（四格表 + 时间衰减 + 样本收缩）、odds 乘法更新、温度收缩 T=3
