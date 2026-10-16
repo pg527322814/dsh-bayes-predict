@@ -21,6 +21,14 @@
 - `MODEL_VERSION` 递增到 2：评分缓存（`scores/h*.json`）据此失效重建，避免新旧模型结果混用
 - 测试：新增 `test/kalman.test.mjs`（57 项）；`test/smoke.mjs` 扩充到 36 项并保留原有基础覆盖
 
+### 行情层：批量报价与指数数据
+
+- `market.js` 把腾讯 `~` 分隔字段的解析抽成 `parseTencentQuoteFields`（单只与批量共用），
+  正式版原有 `fetchTencentQuote` 行为不变
+- 新增 `fetchTencentQuotes`：腾讯同一接口支持 `q=a,b,c`，按 60 只分批一次拉多只实时行情
+  （自选股页用，避免 N 次往返）；某批失败只丢该批，调用方回退缓存价
+- 新增 `quoteDateOf`（时间戳 → 交易日）与 `fetchIndexData`（东财指数日 K，用于市场 beta 信号，带 TTL 缓存）
+
 ## 1.0.0 (2026-08-22)
 
 - 贝叶斯核心：双向经验似然比（四格表 + 时间衰减 + 样本收缩）、odds 乘法更新、温度收缩 T=3
