@@ -55,5 +55,8 @@
     "cordis.patch.yml",
     "LICENSE",
     "README.md"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
 }

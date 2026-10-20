@@ -26,6 +26,16 @@
 
 ## 安装
 
+**方式一：一键安装（推荐，需要能访问 github.com）**
+
+```sh
+dsh plugin --profile web add github:pg527322814/dsh-bayes-predict
+```
+
+装完**重启 `dsh web`** 生效（插件层在启动时合成；client bundle 的 HMR 仅在 `pnpm run dev:web` 重建时可用）。
+
+**方式二：手动安装（离线，或网络访问 github.com 受限时）**
+
 1. 插件包拷贝至 `%USERPROFILE%\.dsh\profiles\web\node_modules\dsh-bayes-predict`
    （该目录不存在时先创建；profile 的 baseUrl 锚定在 `profiles\web`，node 解析会向上逐级查找 node_modules）
 2. `%USERPROFILE%\.dsh\profiles\web\cordis.patch.yml` 追加：
@@ -36,7 +46,7 @@
       name: 'dsh-bayes-predict'
 ```
 
-3. 重启 `dsh web`（插件集变更需重启生效；client bundle 的 HMR 仅在 `pnpm run dev:web` 重建时可用）。
+3. 重启 `dsh web`。
 
 > ⚠️ 客户端契约：`lib/client.js` 的 factory **必须导出 `inject` 数组**（如 `exports.inject = ["slots"]`）。
 > cordis 依据模块导出的 `inject` 决定注入哪些服务；缺失时 `apply(ctx)` 里访问 `ctx.slots`
